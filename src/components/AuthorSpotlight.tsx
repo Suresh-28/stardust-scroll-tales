@@ -17,7 +17,8 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({ isDark, setCur
       bio: "Exploring the intersection of artificial intelligence and human values",
       avatar: "from-blue-500 to-purple-500",
       followers: "12.4k",
-      stories: 23
+      stories: 23,
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=200&h=200&fit=crop&crop=face"
     },
     {
       name: "Marcus Chen",
@@ -25,7 +26,8 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({ isDark, setCur
       bio: "Bringing the cosmos closer to Earth through compelling narratives",
       avatar: "from-green-500 to-teal-500",
       followers: "8.7k",
-      stories: 18
+      stories: 18,
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200&h=200&fit=crop&crop=face"
     },
     {
       name: "Aria Thompson",
@@ -33,7 +35,8 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({ isDark, setCur
       bio: "Documenting the renaissance of digital and traditional art forms",
       avatar: "from-pink-500 to-rose-500",
       followers: "15.2k",
-      stories: 31
+      stories: 31,
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=200&h=200&fit=crop&crop=face"
     }
   ];
 
@@ -92,10 +95,14 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({ isDark, setCur
                     : 'bg-black/10 border border-black/20 hover:bg-black/20'
                 } shadow-2xl hover:shadow-3xl`}>
                   
-                  {/* Avatar */}
+                  {/* Avatar with Real Image */}
                   <div className="relative mb-6">
-                    <div className={`w-24 h-24 mx-auto rounded-full bg-gradient-to-br ${author.avatar} flex items-center justify-center shadow-lg`}>
-                      <User className="w-12 h-12 text-white" />
+                    <div className={`w-24 h-24 mx-auto rounded-full bg-gradient-to-br ${author.avatar} p-1 shadow-lg`}>
+                      <img 
+                        src={author.image}
+                        alt={author.name}
+                        className="w-full h-full rounded-full object-cover"
+                      />
                     </div>
                     
                     {/* Voice Waveform Background */}
