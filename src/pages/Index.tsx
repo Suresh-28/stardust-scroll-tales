@@ -91,7 +91,7 @@ const Index = () => {
       {/* Animated Hero Section */}
       <AnimatedHero isDark={isDark} scrollY={scrollY} setCursorIcon={setCursorIcon} />
 
-      {/* Chronicles Carousel with Images */}
+      {/* Chronicles Carousel */}
       <section className="py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className={`w-full h-full ${isDark ? 'bg-gradient-to-r from-purple-500/20 to-indigo-500/20' : 'bg-gradient-to-r from-amber-300/20 to-orange-300/20'}`} />
@@ -108,24 +108,9 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { 
-                title: "The Future of AI", 
-                type: "Tech Deep Dive", 
-                color: "from-blue-500 to-cyan-500",
-                image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop"
-              },
-              { 
-                title: "Art Renaissance", 
-                type: "Cultural Story", 
-                color: "from-purple-500 to-pink-500",
-                image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=200&fit=crop"
-              },
-              { 
-                title: "Space Mysteries", 
-                type: "Science Feature", 
-                color: "from-green-500 to-emerald-500",
-                image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=400&h=200&fit=crop"
-              }
+              { title: "The Future of AI", type: "Tech Deep Dive", color: "from-blue-500 to-cyan-500" },
+              { title: "Art Renaissance", type: "Cultural Story", color: "from-purple-500 to-pink-500" },
+              { title: "Space Mysteries", type: "Science Feature", color: "from-green-500 to-emerald-500" }
             ].map((story, i) => (
               <div
                 key={i}
@@ -138,11 +123,6 @@ const Index = () => {
                 onMouseLeave={() => setCursorIcon(null)}
               >
                 <div className={`w-full h-32 bg-gradient-to-r ${story.color} rounded-lg mb-6 relative overflow-hidden`}>
-                  <img 
-                    src={story.image}
-                    alt={story.title}
-                    className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
-                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
                   <div className="absolute bottom-2 right-2">
                     <Play className="w-6 h-6 text-white opacity-80 group-hover:opacity-100 transition-opacity" />
